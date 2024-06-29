@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Thrifty Voyage</title>
+</head>
+
+
+<body id="bookingPage">
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+   
+    <section id="bookingbackground">
+        <ul>
+            <li  ><a href="index.html#firstpage" style="color: white; font-family: poppins;font-weight: 400;">HOME<div class="hover" style="background-color: white;"></div></a></li>
+            <li ><a href="index.html#second_page" style="color: white; font-family: poppins;font-weight: 400;">ABOUT<div class="hover" style="background-color: white;"></div></a></li>
+            <li ><a href="index.html#third_page" style="color: white; font-family: poppins;font-weight: 400;">EXPLORE<div class="hover" style="background-color: white;"></div></a></li>
+            <li ><a href="index.html#fourth_page" style="color: white; font-family: poppins;font-weight: 400;">CONTACT<div class="hover" style="background-color: white;"></div></a></li>
+        </ul>
+        <a href="cabBooking.html">
+            <button id="cabBooking" style="background-color: transparent; border: 1px solid white; border-radius: 10px; padding: 10px 15px; margin-left: 1250px;margin-top: -53px;display: flex; z-index: 99;position: absolute; overflow: hidden; font-size: 18px; ">Get a Cab <div id="contact"></div>
+            </button>
+        </a>
+        <!-- Main Form  -->
+        <h1  class="bookyourdream" >BOOK YOUR DREAM </h1>
+                <h1  class="tourwithus" >TOUR WITH US</h1>
+        <div id="budgettool">
+            <form name="booking-form">
+
+                <input type="text" id="bdgt" name="bdgt" placeholder="Enter your budget" required>
+                <select name="" id="curr" onchange="currencyChange(this.value);" >
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+
+
+                <input type="text" id="num" name="num" placeholder="How many of you are going?" required>
+<br>
+                <input type="text" id="dys" name="dys" placeholder="How many days are you planning for?" required>
+
+                <input type="text" id="room" name="room" placeholder="How many rooms do you need?" required>
+
+
+                <p id="pickupText">Choose your Pickup</p>
+                <select name="" id="dropdown" onmousedown="this.value='';" onchange="pickup(this.value);"   required>
+                    <option value="Howrah">Howrah</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Kalyani">Kalyani</option>
+                    <option value="Chembur">Chembur</option>
+                    <option value="Royapuram">Royapuram</option>
+                    <option value="Alamnagar">Alamnagar</option>
+                    <option value="Gondia">Gondia</option>
+                </select>
+
+
+                <p id="destinationText">Choose your destination</p>
+                <select name="" id="dropdown" onmousedown="this.value='';" onchange="destination(this.value);"  required class="destinationDropdown">
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Howrah">Howrah</option>
+                    <option value="Delhi">Delhi</option>                    
+                    <option value="Chennai">Chennai</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Raipur">Raipur</option>
+                    <option value="Kalyani">Kalyani</option>
+                    <option value="Chembur">Chembur</option>
+                    <option value="Royapuram">Royapuram</option>
+                    <option value="Alamnagar">Alamnagar</option>
+                    <option value="Gondia">Gondia</option>
+                </select>
+
+<br>
+                <input type="button" value="Submit" id="submit" name="submit" onmousedown="onSubmission();false">
+
+                <div id="result"></div>
+
+            </form>
+
+        </div>
+
+<!-- Train plan  -->
+        <div id="output1" style="display: none;">
+            <h1 id="trainText">Your Journey plan by Train !
+            </h1>
+            <p id="mode1"></p> <button id="mode1b1" class="buttonRedirect" onmousedown="irctc()">BOOK NOW</button>
+            <p id="hotel1"></p><button id="mode1b2" class="buttonRedirect" onmousedown="hotelgo()">BOOK NOW</button>
+            <p id="reserved1"></p>
+        </div>
+
+
+<!-- flight plan  -->
+        <div id="output2" style="display: none;">
+            <h1 id="flightText">Your Journey plan by Flight !
+            </h1>
+            <p id="mode2"></p> <button id="mode2b1" class="buttonRedirect" onmousedown="easytrip()">BOOK NOW</button>
+            <p id="hotel2"></p><button id="mode2b2" class="buttonRedirect" onmousedown="hotelgo()">BOOK NOW</button>
+            <p id="reserved2"></p><br>
+        </div>
+
+
+<!-- Other plan -->
+        <div id="output3" style="display: none;">
+            <h1 id="otherText">Efficient Travel Path: Station by Station !
+            </h1>
+            <p id="modal"></p><br>
+            <p id="modal1"></p><br>
+            <p id="modal2"></p><br>
+            <a id="mapLink" href="/" target="_blank">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93767.48596056245!2d72.87333338549438!3d19.09760628667831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1717829992092!5m2!1sen!2sin" width="200px" height="200px" style="border:0; border-radius: 10px; margin-top: -150px; margin-left: 420px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            </a>
+        </div>
+
+
+        <script src="booking.js"></script>
+        <script src="data.js"></script>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            document.querySelector(".preloader").style.opacity = "0";
+            let loader = setTimeout(() => {
+                document.querySelector(".preloader").style.display = "none";
+            }, 2100)
+            // document.querySelector(".preloader").style.transform = "translateY(-100vh)"
+        })
+
+        const timer = setTimeout(() => {
+            Weglot.initialize({
+                api_key: 'wg_25487a527b37cc5490ba04508f77815d3'
+            });
+        }, 2100)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Thrifty Voyage</title>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+    type="application/javascript"></script>
+</head>
+
+
+   
+        <style>
+            body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    height: fit-content;
+}
+
+
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    height: 15px;
+
+}
+
+.search-bar button {
+   
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    
+}
+
+.user-options a {
+    margin-left: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px 50px;
+
+}
+
+.hotel-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hotel-images{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+}
+#image1{
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+#image2
+{
+    height: 172px;
+    width: 250px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+#image3
+{
+    height: 170px;
+    width: 250px;
+    margin-top: 176px;
+    margin-left:-250px;
+    border-radius: 10px;
+}
+#image4
+{
+    height: 345px;
+    width: 300px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+#image5
+{
+    height: 345px;
+    width: 300px;
+    margin-left: 5px;
+    border-radius: 10px;
+}
+.hotel-info {
+    margin-left: 100px;
+    padding: 10px 30px;
+    width: 800px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+li{
+    font-size: 14px;
+    font-weight: 300;
+    list-style: circle;
+}
+ul{
+display: flex;
+column-gap:40px;
+flex-wrap: wrap;
+}
+.map{
+    width: fit-content;
+    margin-left: 1000px;
+    margin-top: -290px;
+}
+.map iframe {
+   width: 310px;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: -100px;
+    display: flex;
+}
+
+.room-options {
+    padding: 20px 100px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-options button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-options a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.room {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-top: 1px solid #dee2e6;
+}
+
+.room-details {
+    display: flex;
+    gap: 20px;
+}
+
+.room-details img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.room-info ul {
+    list-style-type: none;
+    padding: 0;
+    width: 500px;
+    margin-left: 15px;
+}
+
+
+.room-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.room-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.benefits {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.book-room {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-room button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+        </style>
+        <body>
+            <header>
+         
+                <div class="search-bar">
+                    <input type="text" placeholder="Destination" />
+                    <input type="text" placeholder="Check in -- / -- / ----" />
+                    <input type="text" placeholder="Check out -- / -- / ----" />
+                    <input type="text" placeholder="Guests and rooms" />
+                    <button>Search</button>
+                </div>
+                
+            </header>
+            <main>
+                <div class="hotel-details">
+                   
+                    <div class="hotel-images">
+                        <img src="images/hotelDescription1.jpg" alt="Hotel 1" id="image1">
+                        <img src="images/hotelDescription2.jpg" alt="Hotel 2" id="image2">
+                        <img src="images/hotelDescription3.jpg" alt="Hotel 3" id="image3">
+                        <img src="images/hotelDescription4.jpg" alt="Hotel 4" id="image4">
+                        <img src="images/hotelDescription5.jpg" alt="Hotel 5" id="image5">
+                    </div>
+                    <div class="hotel-info">
+                        <h1>HOTELUX Amsterdam Airport Hotel</h1>
+                        <p>
+                            Conveniently situated in the Amsterdam Airport Schiphol part of Amsterdam, this property puts you close to attractions and interesting dining options. This 3-star property is packed with in-house facilities to improve the quality and joy of your stay.</p>
+                        <h3>Highlights</h3>
+                        <ul>
+                            <li>Front desk (24-hour)</li>
+                            <li>Free Wi-Fi in all rooms!</li>
+                            <li>Daily housekeeping</li>
+                            <li>Casino</li>
+                            <li>Vending machine</li>
+                        </ul>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93767.48596056245!2d72.87333338549438!3d19.09760628667831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1717829992092!5m2!1sen!2sin" 
+                            width="100%" height="300" style="border:0; border-radius: 10px; margin-top: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="room-options">
+                    <h2>Your Room Details</h2>
+                    
+                    <div class="room-availability">
+                        <p>1 room type with <strong>only 1 room offer still available</strong></p>
+                        <p><small>Prices do not include taxes & fees</small></p>
+                    </div>
+                    <div class="room">
+                        <div class="room-details">
+                            <img src="images/hotelDescription2.jpg" alt="Room">
+                            <div class="room-info">
+                                <h3>Double Room</h3>
+                                <ul>
+                                    <li>2 single beds</li>
+                                    <li>Room size: 18 m²/194 ft²</li>
+                                    <li>Outdoor view</li>
+                                    <li>Non-smoking</li>
+                                    <li>Shower</li>
+                                </ul>
+                                <a href="#">See all room facilities</a>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="room-pricing">
+                            <div class="benefits">
+                                <p>Lowest price available!</p>
+                                <p>Room only</p>
+                                <ul>
+                                    <li>Extra low price! (non-refundable)</li>
+                                    <li>Parking, Free WiFi</li>
+                                </ul>
+                            </div>
+                            <div class="price">
+                                <p>₹7,436</p>
+                                <small>Per night before taxes and fees</small>
+                            </div>
+                            <div class="book-room">
+                                <button id="connectButton">Connect Wallet</button>
+                                <button id="sendButton" disabled>Send Transaction</button>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </body>
+        </html>
+        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Define the Ethereum provider (MetaMask)
+        let provider;
+
+        // Define the signer
+        let signer;
+
+        // Connect to MetaMask
+        document.getElementById('connectButton').addEventListener('click', async () => {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    // Request account access if needed
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+                    // Create a new Web3 provider instance
+                    provider = new ethers.providers.Web3Provider(window.ethereum);
+
+                    // Get the signer
+                    signer = provider.getSigner();
+
+                    alert('Wallet connected!');
+                    document.getElementById('sendButton').disabled = false;
+                } catch (error) {
+                    if (error.code === 4001) {
+                        // User rejected the request
+                        alert('Connection request was rejected by the user.');
+                    } else {
+                        console.error(error);
+                        alert('Error connecting to wallet. See console for details.');
+                    }
+                }
+            } else {
+                alert('MetaMask is not installed! Please install it to use this feature.');
+            }
+        });
+
+        // Send Ethereum transaction
+        document.getElementById('sendButton').addEventListener('click', async () => {
+            if (!signer) {
+                alert('Please connect your wallet first!');
+                return;
+            }
+
+            try {
+                // Define the transaction
+                const tx = {
+                    to: '0x20d308914dd3Fb75cA540F06a3b361acA89fB8FF', // Replace with the recipient address
+                    value: ethers.utils.parseEther('2'), // The amount of Ether to send (in this case, 0.01 ETH)
+                };
+
+                // Send the transaction
+                const txResponse = await signer.sendTransaction(tx);
+
+                // Wait for the transaction to be mined
+                await txResponse.wait();
+
+                alert('Transaction sent! Hash: ' + txResponse.hash);
+            } catch (error) {
+                console.error(error);
+                alert('Transaction failed!');
+            }
+        });
+    </script>
+</body>
+</html>

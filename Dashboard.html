@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>   
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Thrifty Voyage</title>
+</head>
+<body>
+    <nav>
+        <h1>ADMIN</h1>
+        <ul>
+            <li><img src="images/dashboard.png" alt=""><a href="Dashboard.html">Dashboard</a></li>
+            <li> <img src="images/clarity_employee-group-line.png" alt=""><a href="employee.html">Employee</a></li>
+            <li><img src="images/uil_notes.png" alt=""><a href="employeeattandance.html">Attendence</a></li>
+            <!-- <li> <img src="images/mdi_users.png" alt=""><a href="users.html">User</a></li> -->
+            <li><img src="images/mdi_cab.png" alt=""><a href="cabDetails.html">Cab details</a></li>
+            <!-- <li><img src="images/uiw_setting.png" alt=""><a href="">Settings</a></li> -->
+        </ul>
+    </nav>
+   <div id="cards">
+    <div class="top-cards" id="card1">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/bgebyztw.json"
+    trigger="hover"
+    state="hover-looking-around"
+    stroke="bold"
+    state="in-reveal"
+    colors="primary:#00000,secondary:#00000"
+    style="width:70px;height:70px;margin-top:-40px;">
+</lord-icon>
+<h3>Users</h3>
+<span id="counter1">000</span>
+    </div>
+    
+    
+    <div class="top-cards" id="card2">
+        
+        <lord-icon
+            src="https://cdn.lordicon.com/kndkiwmf.json"
+            trigger="hover"
+            state="hover-roll"
+            stroke="bold"
+            colors="primary:#000000,secondary:#000000"
+            style="width:70px;height:70px;margin-top:-60px;">
+        </lord-icon>
+</lord-icon>
+<h3>Employee</h3>
+<span id="counter2">000</span>
+    </div>
+
+
+<div  class="top-cards" id="card3">
+    <lord-icon
+        src="https://cdn.lordicon.com/grcrdebf.json"
+        trigger="hover"
+        state="hover-roll"
+        stroke="bold"
+        colors="primary:#000000,secondary:#000000"
+        style="width:80px;height:80px;margin-top:-30px;">
+    </lord-icon>
+    <h3>Cabs</h3>
+<span id="counter3">000</span>
+</div>
+
+
+<div class="top-cards"id="card4">
+<lord-icon
+    src="https://cdn.lordicon.com/wtyzzeli.json"
+    trigger="hover"
+    stroke="bold"
+    colors="primary:#000000,secondary:#ffffff,tertiary:#ffffff,quaternary:#ffffff,quinary:#ffffff"
+    style="width:80px;height:80px;margin-top:-50px;">
+</lord-icon>
+<h3>Hotels</h3>
+<span id="counter4">000</span>
+
+</div>
+</div>
+
+<div id="graph-box" >
+    <h3 id="revenue">Revenue Generated</h3>
+    <div class="y-axis">
+        
+        <p>80k</p>
+        <p>60k</p>
+        <p>40k</p>
+        <p>20k</p>
+        <p>0k</p>
+    </div>
+    <div class="skill-bar1">
+        <div class="skill-per" style="max-height:40%"></div>
+    </div>
+    <div class="skill-bar2">
+        <div class="skill-per-even" style="max-height:70%"></div>
+    </div>
+    <div class="skill-bar3">
+        <div class="skill-per" style="max-height:40%"></div>
+    </div>
+    <div class="skill-bar4">
+        <div class="skill-per-even" style="max-height:65%"></div>
+    </div>
+    <div class="skill-bar5">
+        <div class="skill-per" style="max-height:20%"></div>
+    </div>
+    <div class="skill-bar6">
+        <div class="skill-per-even" style="max-height:50%"></div>
+    </div>
+    <div class="skill-bar7">
+        <div class="skill-per" style="max-height:70%"></div>
+    </div>
+    <div class="skill-bar8">
+        <div class="skill-per-even" style="max-height:60%"></div>
+    </div>
+    <div class="skill-bar9">
+        <div class="skill-per" style="max-height:80%"></div>
+    </div>
+    <div class="skill-bar10">
+        <div class="skill-per-even" style="max-height:60%"></div>
+    </div>
+    <div class="skill-bar11">
+        <div class="skill-per" style="max-height:40%"></div>
+    </div>
+    <div class="skill-bar12">
+        <div class="skill-per-even" style="max-height:70%"></div>
+    </div>
+    <div class="months">
+        <p id="jan">Jan</p>
+        <p id="feb">Feb</p>
+        <p id="mar">Mar</p>
+        <p id="apr">Apr</p>
+        <p id="may">May</p>
+        <p id="jun">Jun</p>
+    </div>
+</div>
+<div class="wrapper-calender">
+    <header>
+      <p class="current-date"></p>
+      <div class="icons">
+        <span id="prev" class="material-symbols-rounded"></span>
+        <span id="next" class="material-symbols-rounded"></span>
+      </div>
+    </header>
+    <div class="calendar">
+      <ul class="weeks">
+        <li>Sun</li>
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+      </ul>
+      <ul class="days"></ul>
+    </div>
+  </div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Counter 1
+    const counterE1 = document.querySelector("#counter1");
+    let countnumber = 0;
+    const updatecounter = setInterval(function() {
+        countnumber++;
+        counterE1.textContent = countnumber;
+        if (countnumber >= 100) {
+            clearInterval(updatecounter);
+        }
+    }, 10);
+
+    // Counter 2
+    const counterE2 = document.querySelector("#counter2");
+    let countnumber2 = 0;
+    const updatecounter2 = setInterval(function() {
+        countnumber2++;
+        counterE2.textContent = countnumber2;
+        if (countnumber2 >= 10) {
+            clearInterval(updatecounter2);
+        }
+    }, 100);
+
+    // Counter 3
+    const counterE3 = document.querySelector("#counter3");
+    let countnumber3 = 0;
+    const updatecounter3 = setInterval(function() {
+        countnumber3++;
+        counterE3.textContent = countnumber3;
+        if (countnumber3 >= 50) {
+            clearInterval(updatecounter3);
+        }
+    }, 20);
+
+    // Counter 4
+    const counterE4 = document.querySelector("#counter4");
+    let countnumber4 = 0;
+    const updatecounter4 = setInterval(function() {
+        countnumber4++;
+        counterE4.textContent = countnumber4;
+        if (countnumber4 >= 60) {
+            clearInterval(updatecounter4);
+        }
+    }, 20);
+
+    // Calendar
+    const daysTag = document.querySelector(".days"),
+        currentDate = document.querySelector(".current-date"),
+        prevNextIcon = document.querySelectorAll(".icons span");
+
+    let date = new Date(),
+        currYear = date.getFullYear(),
+        currMonth = date.getMonth();
+
+    const months = ["January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+    const renderCalendar = () => {
+        let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+            lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+            lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+            lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+        let liTag = "";
+
+        for (let i = firstDayofMonth; i > 0; i--) {
+            liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+        }
+        for (let i = 1; i <= lastDateofMonth; i++) {
+            let isToday = i === date.getDate() && currMonth === new Date().getMonth() &&
+                currYear === new Date().getFullYear() ? "active" : "";
+            liTag += `<li class="${isToday}">${i}</li>`;
+        }
+        for (let i = lastDayofMonth; i < 6; i++) {
+            liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+        }
+        currentDate.innerText = `${months[currMonth]} ${currYear}`;
+        daysTag.innerHTML = liTag;
+    };
+
+    renderCalendar();
+
+    prevNextIcon.forEach(icon => {
+        icon.addEventListener("click", () => {
+            currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+            if (currMonth < 0 || currMonth > 11) {
+                date = new Date(currYear, currMonth, new Date().getDate());
+                currYear = date.getFullYear();
+                currMonth = date.getMonth();
+            } else {
+                date = new Date();
+            }
+            renderCalendar();
+        });
+    });
+});
+
+</script>
+
+
+
+
+
+</body>
+</html>

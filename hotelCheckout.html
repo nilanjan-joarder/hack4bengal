@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Thrifty Voyage</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 5px 15px;
+    background-color: #0698f3;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-options a {
+    margin-left: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.filters {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 10px;
+}
+
+.filters label {
+    margin-top: 10px;
+}
+
+.filters select {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width:200px;
+    height: 30px;
+}
+
+.content {
+    flex: 4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hotels {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.hotel img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.hotel-info {
+    flex: 1;
+}
+
+.hotel-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.hotel-info p {
+    margin: 5px 0;
+}
+
+.hotel-info button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.map {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: -100px;
+    border-radius: 8px;
+    padding: 10px;
+    position: sticky;
+    top: -50px;
+    height: 100vh;
+}
+
+.map img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+</style>
+<body>
+   
+    <header>
+      
+        <div class="search-bar">
+            <input type="text" placeholder="Destination" />
+            <input type="text" placeholder="Check in -- / -- / ----" />
+            <input type="text" placeholder="Check out -- / -- / ----" />
+            <input type="text" placeholder="Guests and rooms" />
+            <button>Search</button>
+        </div>
+       
+    </header>
+    <main>
+        <div class="filters">
+            <label>Price: per night</label>
+            <select>
+                <option>₹100 - ₹46,000 +</option>
+            </select>
+            <label>Filters</label>
+            <select>
+                <option>Select</option>
+            </select>
+            <label>Guest rating</label>
+            <select>
+                <option>All</option>
+            </select>
+            <label>Property type</label>
+            <select>
+                <option>Select</option>
+            </select>
+            <label>Location</label>
+            <select>
+                <option>City centre</option>
+            </select>
+        </div>
+        <div class="content">
+            <div class="hotels">
+                <div class="hotel">
+                    <img src="images/hotelImage5.webp" alt="Hotel 1">
+                    <div class="hotel-info">
+                        <h3>President - IHCL SeleQtions</h3>
+                        <p>Comfortable Stay, Explore Mumbai</p>
+                        <p>19.0 km to City centre</p>
+                        <p>8.8 - Excellent (3187 reviews)</p>
+                        <p>From ₹12,787</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage4.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>Novotel Mumbai Juhu Beach</h3>
+                        <p>Fitness Facilities, Beachside Relaxation</p>
+                        <p>6.7 km to City centre</p>
+                        <p>7.1 (2283 reviews)</p>
+                        <p>From ₹9,409</p>
+                       <a href="transaction.html"> <button>View Details</button></a>
+                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage1.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>The Oberoi Mumbai</h3>
+                        <p>Elegant and Contemporary</p>
+                        <p>1.5 km to City centre</p>
+                        <p>9.3 - Superb (4500 reviews)</p>
+                        <p>From ₹18,000</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage2.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>ITC Grand Central</h3>
+                        <p>Premium Hospitality</p>
+                        <p>3.0 km to City centre</p>
+                        <p>8.8 - Excellent (4000 reviews)</p>
+                        <p>From ₹15,000</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage3.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>The St. Regis Mumbai</h3>
+                        <p>World-Class Amenities</p>
+                        <p>2.5 km to City centre</p>
+                        <p>9.0 - Excellent (3500 reviews)</p>
+                        <p>From ₹22,000</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage4.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>Trident, Nariman Point</h3>
+                        <p>Luxury by the Sea</p>
+                        <p>0.5 km to City centre</p>
+                        <p>9.1 - Superb (4200 reviews)</p>
+                        <p>From ₹19,000</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div><div class="hotel">
+                    <img src="images/hotelImage5.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>Novotel Mumbai Juhu Beach</h3>
+                        <p>Fitness Facilities, Beachside Relaxation</p>
+                        <p>6.7 km to City centre</p>
+                        <p>7.1 (2283 reviews)</p>
+                        <p>From ₹9,409</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+                <div class="hotel">
+                    <img src="images/hotelImage1.webp" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h3>Trident, Nariman Point</h3>
+                        <p>Luxury by the Sea</p>
+                        <p>0.5 km to City centre</p>
+                        <p>9.1 - Superb (4200 reviews)</p>
+                        <p>From ₹19,000</p>
+                        <a href="transaction.html"><button>View Details</button>
+</a>                    </div>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93767.48596056245!2d72.87333338549438!3d19.09760628667831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1717829992092!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+
+    
+</section>
+</body>
+</html>

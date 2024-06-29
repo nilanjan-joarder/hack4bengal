@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="employee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+        <h1>ADMIN</h1>
+        <ul>
+            <li><img src="images/dashboard.png" alt=""><a href="Dashboard.html">Dashboard</a></li>
+            <li> <img src="images/clarity_employee-group-line.png" alt=""><a href="employee.html">Employee</a></li>
+            <li><img src="images/uil_notes.png" alt=""><a href="employeeattandance.html">Attendence</a></li>
+            <!-- <li> <img src="images/mdi_users.png" alt=""><a href="users.html">User</a></li> -->
+            <li><img src="images/mdi_cab.png" alt=""><a href="cabDetails.html">Cab details</a></li>
+            <!-- <li><img src="images/uiw_setting.png" alt=""><a href="">Settings</a></li> -->
+        </ul>
+    </nav>
+    <div class="main-body">
+        <p id="attandance-title">Attandance</p>
+        <div class="category">
+            <select name="" id="" class="department">
+                <option value="">Department</option>
+                <option value=""> HR</option>
+                <option value=""> UI/UX Designer</option>
+                <option value=""> Software Developer</option>
+            </select>
+            <select name="" id="" class="teamlead">
+                <option value="">Team Lead</option>
+                <option value="">Jasmine Rivera</option>
+                <option value="">Xavier Thompson</option>
+                <option value="">Maya Patel</option>
+                <option value="">Elijah Ramirez</option>
+                <option value="">Olivia Chang</option>
+            </select>
+            <select name="" id="" class="select">
+                <option value="">Mode</option>
+                <option value="">Onsite</option>
+                <option value="">Remote</option>
+                <option value="">Hybride</option>
+            </select>
+            <input type="date" name="" id="date-attandance">
+
+            <div class="first-row-attandance">
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance" id="div1" onclick="selectDiv(1)">P</div>
+                        <div class="record-attandance" id="div2" onclick="selectDiv(2)">A</div>
+                        <div class="record-attandance" id="div3" onclick="selectDiv(3)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance" id="div4" onclick="selectDiv(4)">P</div>
+                        <div class="record-attandance" id="div5" onclick="selectDiv(5)">A</div>
+                        <div class="record-attandance" id="div6" onclick="selectDiv(6)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance" id="div7" onclick="selectDiv(7)">P</div>
+                        <div class="record-attandance" id="div8" onclick="selectDiv(8)">A</div>
+                        <div class="record-attandance" id="div9" onclick="selectDiv(9)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance" id="div10" onclick="selectDiv(10)">P</div>
+                        <div class="record-attandance"id="div11" onclick="selectDiv(11)">A</div>
+                        <div class="record-attandance"id="div12" onclick="selectDiv(12)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance" id="div13" onclick="selectDiv(13)">P</div>
+                        <div class="record-attandance" id="div14" onclick="selectDiv(14)">A</div>
+                        <div class="record-attandance" id="div15" onclick="selectDiv(15)">L</div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-row-attandance">
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div16" onclick="selectDiv(16)">P</div>
+                        <div class="record-attandance"id="div17" onclick="selectDiv(17)">A</div>
+                        <div class="record-attandance"id="div18" onclick="selectDiv(18)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div19" onclick="selectDiv(19)">P</div>
+                        <div class="record-attandance"id="div20" onclick="selectDiv(20)">A</div>
+                        <div class="record-attandance"id="div21" onclick="selectDiv(21)">L</div>
+
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div22" onclick="selectDiv(22)">P</div>
+                        <div class="record-attandance"id="div23" onclick="selectDiv(23)">A</div>
+                        <div class="record-attandance"id="div24" onclick="selectDiv(24)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div25" onclick="selectDiv(25)">P</div>
+                        <div class="record-attandance"id="div26" onclick="selectDiv(26)">A</div>
+                        <div class="record-attandance"id="div27" onclick="selectDiv(27)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div28" onclick="selectDiv(28)">P</div>
+                        <div class="record-attandance"id="div29" onclick="selectDiv(29)">A</div>
+                        <div class="record-attandance"id="div30" onclick="selectDiv(30)">L</div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row-attandance">
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div31" onclick="selectDiv(31)">P</div>
+                        <div class="record-attandance"id="div32" onclick="selectDiv(32)">A</div>
+                        <div class="record-attandance"id="div33" onclick="selectDiv(33)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div34" onclick="selectDiv(34)">P</div>
+                        <div class="record-attandance"id="div35" onclick="selectDiv(35)">A</div>
+                        <div class="record-attandance"id="div36" onclick="selectDiv(36)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div37" onclick="selectDiv(37)">P</div>
+                        <div class="record-attandance"id="div38" onclick="selectDiv(38)">A</div>
+                        <div class="record-attandance"id="div39" onclick="selectDiv(39)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div40" onclick="selectDiv(40)">P</div>
+                        <div class="record-attandance"id="div41" onclick="selectDiv(41)">A</div>
+                        <div class="record-attandance"id="div42" onclick="selectDiv(42)">L</div>
+                    </div>
+                </div>
+                <div class="attandance-record">
+                    <img src="images/Ellipse 2295.png" alt="" srcset="" id="profile-picture">
+                    <div class="record">
+                        <div class="record-attandance"id="div43" onclick="selectDiv(43)">P</div>
+                        <div class="record-attandance"id="div44" onclick="selectDiv(44)">A</div>
+                        <div class="record-attandance"id="div45" onclick="selectDiv(45)">L</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var selectedDivs = new Array(15).fill(null); // Array to store selected divs for each candidate
+
+        function selectDiv(index) {
+            var candidateIndex = Math.floor((index - 1) / 3); // Calculate candidate index
+            var groupStartIndex = candidateIndex * 3; // Calculate start index of the current group of three divs
+
+            // Reset background color for the previously selected div in the same group
+            var previousSelectedIndex = selectedDivs[candidateIndex];
+            if (previousSelectedIndex !== null) {
+                var previousSelectedDiv = document.getElementById('div' + (previousSelectedIndex + 1));
+                previousSelectedDiv.style.backgroundColor = 'gray';
+            }
+
+            // Update selected div for the current candidate
+            selectedDivs[candidateIndex] = index - 1;
+
+            // Change background color for the selected div
+            var selectedDiv = document.getElementById('div' + index);
+            selectedDiv.style.backgroundColor = '#151515';
+        }
+    </script>
+</body>
+
+</html>

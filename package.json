@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@dynopii/callchimp": "^0.1.4",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "solc": "^0.8.26",
+    "web3": "^4.9.0"
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpDmIUauwXbbQvkhNWfZfTxGhClpTRH1c&libraries=places"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+    type="application/javascript"></script>
+    <link rel="stylesheet" href="cabBooking.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <ul>
+    <li  ><a href="index.html#firstpage" style="color: rgb(255, 255, 255); font-family: poppins;font-weight: 400;">HOME<div class="hover" style="background-color: white;"></div></a></li>
+    <li ><a href="index.html#second_page" style="color: white; font-family: poppins;font-weight: 400;">ABOUT<div class="hover" style="background-color: white;"></div></a></li>
+    <li ><a href="index.html#third_page" style="color: white; font-family: poppins;font-weight: 400;">EXPLORE<div class="hover" style="background-color: white;"></div></a></li>
+    <li ><a href="index.html#fourth_page" style="color: white; font-family: poppins;font-weight: 400;">CONTACT<div class="hover" style="background-color: white;"></div></a></li>
+</ul>
+
+    <form id="booking-form">
+        <input type="text" id="first-name" name="first-name" required placeholder="Full Name"><br>
+
+
+      
+        <input type="tel" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" required placeholder="Mobile Number"><br>
+
+      
+        <input type="email" id="email" name="email" required placeholder="Email ID"><br>
+
+       
+        <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup location" required ><br>
+
+       
+        <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Enter dropoff location" required ><br> 
+
+        <input type="date" id="date" name="date" placeholder="Choose date" required> <br>
+
+        <input type="text" id="train-number" name="train-number" required placeholder="Enter train number"><br>
+
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <div id="booking-details" style="display: none;">
+        <h2>Booking Details</h2>
+        <p id="first-name-display"></p>
+        <p id="mobile-number-display"></p>
+        <p id="email-display"></p>
+        <p id="pickup-location-display"></p>
+        <p id="dropoff-location-display"></p>
+        <p  id="date-display"></p>
+        <p id="train-number-display"></p>
+        <p id="fare-display-info"></p>
+        <button id="connectButton">Connect Wallet</button>
+        <button id="sendButton" disabled>Send Transaction</button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var autocompletePickup, autocompleteDropoff;
+            var pickupLat, pickupLng, dropoffLat, dropoffLng;
+            var costPerKm = 9.3; 
+
+           
+            autocompletePickup = new google.maps.places.Autocomplete((document.getElementById('pickup-location')), {
+                types: ['geocode'],
+            });
+            google.maps.event.addListener(autocompletePickup, 'place_changed', function(){
+                var place = autocompletePickup.getPlace();
+                pickupLat = place.geometry.location.lat();
+                pickupLng = place.geometry.location.lng();
+                console.log("Pickup Latitude: " + pickupLat);
+                console.log("Pickup Longitude: " + pickupLng);
+            });
+
+            autocompleteDropoff = new google.maps.places.Autocomplete((document.getElementById('dropoff-location')), {
+                types: ['geocode'],
+            });
+            google.maps.event.addListener(autocompleteDropoff, 'place_changed', function(){
+                var place = autocompleteDropoff.getPlace();
+                dropoffLat = place.geometry.location.lat();
+                dropoffLng = place.geometry.location.lng();
+                console.log("Dropoff Latitude: " + dropoffLat);
+                console.log("Dropoff Longitude: " + dropoffLng);
+            });
+
+           
+            $('#booking-form').submit(function(event) {
+                event.preventDefault(); 
+                calculateDistanceAndFare();
+            });
+
+            function calculateDistanceAndFare() {
+                if (!pickupLat || !pickupLng || !dropoffLat || !dropoffLng) {
+                    alert('Please select both pickup and dropoff locations.');
+                    return;
+                }
+                var R = 6371; 
+                var dLat = toRad(dropoffLat - pickupLat);
+                var dLng = toRad(dropoffLng - pickupLng);
+                var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                        Math.cos(toRad(pickupLat)) * Math.cos(toRad(dropoffLat)) * 
+                        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                var distance = R * c; 
+                var fare = distance * costPerKm; 
+                var roundedFare = roundToNearestTen(fare);
+                console.log("Distance: " + distance.toFixed(2) + " km");
+                console.log("Fare: Rs " + roundedFare);
+                document.getElementById('fare-display-info').innerText = "Fare: Rs " + roundedFare;
+            
+                displayBookingDetails(distance.toFixed(2), roundedFare);
+            }
+
+            function displayBookingDetails(distance, fare) {
+                var firstName = $('#first-name').val();
+                var lastName = $('#last-name').val();
+                var mobileNumber = $('#mobile-number').val();
+                var email = $('#email').val();
+                var pickupLocation = $('#pickup-location').val();
+                var dropoffLocation = $('#dropoff-location').val();
+                var date= $('#date').val();
+                var trainNumber = $('#train-number').val();
+
+                $('#first-name-display').text('Full Name: ' + firstName);
+                $('#mobile-number-display').text('Mobile Number: ' + mobileNumber);
+                $('#email-display').text('Email ID: ' + email);
+                $('#pickup-location-display').text('Pickup Location: ' + pickupLocation);
+                $('#dropoff-location-display').text('Dropoff Location: ' + dropoffLocation);
+                $('#date-display').text('Journey date: ' + date);
+                $('#train-number-display').text('Train Number: ' + trainNumber);
+                $('#fare-display-info').text( 'Fare: Rs ' + fare);
+
+               
+                $('#booking-details').show();
+            }
+
+            function toRad(Value) {
+                return Value * Math.PI / 180;
+            }
+
+            function roundToNearestTen(num) {
+                return Math.round(num / 10) * 10;
+            }
+        });
+    </script>
+    <script>
+      
+        let provider;
+
+     
+        let signer;
+
+        document.getElementById('connectButton').addEventListener('click', async () => {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+                  
+                    provider = new ethers.providers.Web3Provider(window.ethereum);
+
+                    signer = provider.getSigner();
+
+                    alert('Wallet connected!');
+                    document.getElementById('sendButton').disabled = false;
+                } catch (error) {
+                    if (error.code === 4001) {
+                        
+                        alert('Connection request was rejected by the user.');
+                    } else {
+                        console.error(error);
+                        alert('Error connecting to wallet. See console for details.');
+                    }
+                }
+            } else {
+                alert('MetaMask is not installed! Please install it to use this feature.');
+            }
+        });
+
+    
+        document.getElementById('sendButton').addEventListener('click', async () => {
+            if (!signer) {
+                alert('Please connect your wallet first!');
+                return;
+            }
+
+            try {
+              
+                const tx = {
+                    to: '0x20d308914dd3Fb75cA540F06a3b361acA89fB8FF', 
+                    value: ethers.utils.parseEther('2'), // The amount of Ether to send (in this case, 0.01 ETH)
+                };
+
+             
+                const txResponse = await signer.sendTransaction(tx);
+
+       
+                await txResponse.wait();
+
+                alert('Transaction sent! Hash: ' + txResponse.hash);
+            } catch (error) {
+                console.error(error);
+                alert('Transaction failed! Insufficient balance. ');
+            }
+        });
+    </script>
+
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    window.addEventListener("load", () => {
+        document.querySelector(".preloader").style.opacity = "0";
+        let loader = setTimeout(() => {
+            document.querySelector(".preloader").style.display = "none";
+        }, 2100)
+        // document.querySelector(".preloader").style.transform = "translateY(-100vh)"
+    })
+
+    const timer = setTimeout(() => {
+        Weglot.initialize({
+            api_key: 'wg_25487a527b37cc5490ba04508f77815d3'
+        });
+    }, 2100)
+
+</script>
+
+</body>
+</html>
+

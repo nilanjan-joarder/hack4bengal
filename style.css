@@ -1,0 +1,1090 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    transform-style: preserve-3d;
+
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+.preloader{
+    z-index: 999999999999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 2s ease-in-out;
+    display: grid;
+    place-items: center;
+    
+}
+.loader {
+    color: #ffffff;
+    width: 4px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+    transform: translateX(-38px);
+    animation: l21 .5s infinite alternate linear;
+  }
+  
+  @keyframes l21 {
+    50%  {box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px}
+    100% {box-shadow: 19px 0 0 0  , 38px 0 0 3px, 57px 0 0 7px}
+  }
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.main-container{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+   
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    column-gap: 50px;
+    background-color: #00000000;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 760; 
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    overflow: hidden;
+}
+
+li a {
+    color: #176368;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 20px 20px; 
+    z-index: 1; 
+    text-shadow: -2px 1.7px rgba(0, 0, 0, 0.216);
+    cursor: pointer;
+}
+
+
+.hover {
+    width: 80%; 
+    background-color: #176368;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 7%;
+    transition: left 0.4s ease;
+    z-index: 0;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+li:hover .hover {
+    left: 0;
+}
+div,section{
+    scroll-snap-align: start;
+    
+}
+.first_page{
+    position: relative;
+    height: 100%;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-wrap:break-word;
+
+}
+#background-image{
+    transform: translateZ(-10px) scale(2);
+}
+#mountain_8{
+    transform: translateZ(-8px) scale(1.8);
+   
+}
+#mountain_5{
+    transform: translateZ(-8px) scale();
+}
+#mountain_4{
+    transform: translateZ(-2px) scale();
+}
+h1{
+    transform: translateZ(-15px) scale();
+}
+#background-image{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 905.5px;
+    width: 1550px;
+    object-fit: cover;
+}
+
+#mountain_8{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 670px;
+    margin-top: 145px;
+    margin-left: 450px;
+    width: auto;
+
+ }
+ 
+#mountain_5{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 400px;
+    margin-top: 295px;
+    margin-left: 650px;
+    width: auto;
+}
+#mountain_4{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 400px;
+    margin-top: 295px;
+    margin-left: 200px;
+    width: auto;
+}
+#mountain_4-1{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 400px;
+     margin-top: 295px;
+    margin-left: 940px;
+    width: auto;
+}
+#sun_rays{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 500px;
+    margin-left:1240px;
+    margin-top: -70px;
+}
+#black_shadow{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height:128.8vh;
+    width: 100vw;
+    margin-top: -29.05vh;
+}
+#mountain_7{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 680px;
+    margin-left:1255px;
+    margin-top: 15px;
+}
+#mountain_1{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    height: 680px;
+    margin-top: 15px;
+
+}
+h2{
+    position: absolute;
+    z-index: -1;
+    display: flex;    
+    margin-top: 150px;
+    font-size: 190px;
+    margin-left: 300px;
+    color: white;
+    font-weight: bolder;
+    width: fit-content;
+    font-family: "Poppins", sans-serif;
+    transform: translateZ(-8px) scale(1.8);
+   
+}
+#second_page{
+    height: 100vh;    
+    font-size: 2rem;
+    padding: 2rem;
+    background-image: url(images/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+#aboutbackground{
+    height: 100vh;    
+    padding: 2rem;
+    background-image: linear-gradient(to top left, #0b0b0b59 10%,#000000 90%);
+    color: rgb(0, 0, 0);
+    margin-top: -32px;
+    margin-left: -32px;
+    width: 100vw;
+    z-index: 1;  
+}
+#wemake{
+    position: absolute;
+    display: flex;    
+    margin-top: 100px;
+    font-size: 100px;
+    margin-left: 0px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-wemake linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:600px ;
+}
+@keyframes fade-in-wemake{
+from{
+    scale: 0.8;
+    opacity: 0;
+    margin-left: -35px;
+}
+to{
+    scale:1;
+    opacity: 1;
+    margin-left: 0px;
+}
+}
+#happen{
+    position: absolute;
+    display: flex;    
+    margin-top:190px;
+    font-size: 100px;
+    margin-left: 2px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:500px ;
+}
+@keyframes fade-in{
+    from{
+        scale: 0.8;
+        opacity: 0;
+    }
+    to{
+        scale:1;
+        opacity: 1;
+    }
+}
+h4{
+    position: absolute;
+    display: flex;    
+    margin-top:350px;
+    font-size:18px ;
+    width: 600px;
+    font-family: poppins;
+    color: white;
+    font-weight: 200;
+   
+}
+
+h5{
+    height: 40px;
+    width: 150px;
+    border-radius: 12px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    z-index: 99;
+    position: absolute;
+    margin-top: 480px;
+    margin-left: 0px;
+    font-size: 17px;
+    font-weight: 300;
+    overflow: hidden;
+    border: 0.5px solid rgb(255, 255, 255);
+    color: white;
+    font-family: poppins;
+    
+}
+
+ #contact {
+    width: 110%;
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    left: -110%;
+    height: 110%;
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+h5:hover #contact {
+    left: 0;
+}
+h5:hover {
+   color: rgb(0, 0, 0);
+  
+}
+#cabBooking:hover #contact {
+        left: 0;
+    }
+#cabBooking{
+    color:white;
+}
+#cabBooking:hover {
+       color: rgb(0, 0, 0);
+      
+    }
+
+.about-right-box{
+    height: 350px;
+    width: 620px;
+    background-color: rgba(0, 0, 0, 0.416);
+    display: flex;
+    margin-left:850px;
+    margin-top:150px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.about-right-box{
+    animation: fade-in-video linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 500px ;
+}
+@keyframes fade-in-video{
+    from{
+        scale: 0.8;
+       
+    }
+    to{
+        scale:1;
+       
+    }
+}
+
+ /* spline-viewer{
+    margin-top: 0px;
+    width: 150%;
+}  */
+
+#third_page{
+    height: 100vh;
+    width: 100vw;
+    background-image:url(images/desert-background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#vrbackground{
+    height:100vh;    
+    background-image: linear-gradient(to top left, #0b0b0b59 10%,#00000056 90%);
+    width: 100vw;
+    z-index: 1;  
+}
+#diveinto{
+    position: absolute;
+    display: flex;    
+    margin-top: 100px;
+    font-size: 100px;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-diveinto linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:600px ;
+}
+@keyframes fade-in-diveinto{
+from{
+    scale: 0.8;
+    opacity: 0;
+    margin-left: 0px;
+}
+to{
+    scale:1;
+    opacity: 1;
+    margin-left: 30px;
+}
+}
+#thedepths{
+    position: absolute;
+    display: flex;    
+    margin-top:190px;
+    font-size: 100px;
+    margin-left: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-thedepths linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:500px ;
+}
+@keyframes fade-in-thedepths{
+    from{
+        scale: 0.8;
+        opacity: 0;
+        margin-left: -10px;
+    }
+    to{
+        scale:1;
+        opacity: 1;
+    }
+}
+
+#ofvr{
+    position: absolute;
+    display: flex;    
+    margin-top:280px;
+    font-size: 100px;
+    margin-left: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-ofvr linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:400px ;
+}
+@keyframes fade-in-ofvr{
+    from{
+        scale: 0.8;
+        opacity: 0;
+        margin-left: -50px;
+    }
+    to{
+        scale:1;
+        opacity: 1;
+    }
+}
+#vr-text{
+   
+    display: flex;   
+    margin-top:450px;
+    font-size:18px ;
+    width: 600px;
+    font-family: poppins;
+    color: white;
+    font-weight: 200;
+    margin-left: 35px;
+}
+
+#carouselExample{
+padding-top: 150px;
+width: 350px;
+margin-left: 1080px;
+}
+#carouselExample{
+    animation: fade-in-carousel linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 600px ;
+}
+@keyframes fade-in-carousel{
+    from{
+        scale: 0.8;
+       
+    }
+    to{
+        scale:1;
+       
+    }
+}
+img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+.carousel-control-prev{
+    margin-left: -50px;
+    margin-top: 150px;
+}
+.carousel-control-next{
+    margin-right: -50px;
+    margin-top: 150px;
+}
+.card-description {
+    background-color: #000000b9;
+    position: relative;
+    height: 110px;
+    border-radius: 0px 0px 10px 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 160px;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+#card-name{
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+#card-button{
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  
+}
+pre{
+    position: relative;
+    height: 40px;
+    width: 150px;
+    border-radius: 12px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    z-index: 99;    
+    font-size: 17px;
+    font-weight: 300;
+    overflow: hidden;
+    border: 0.5px solid rgb(255, 255, 255);
+    color: white;
+    font-family: poppins;
+padding-left: 90px;
+}
+
+ #view {
+    width: 110%;
+    background-color:rgb(239, 239, 239);
+    position: absolute;
+    top: 0;
+    left: -110%;
+    height: 110%;
+    transition: left 0.4s ease;
+    z-index: -1;
+   
+  
+}
+pre:hover #view {
+    left: 0;
+}
+pre:hover {
+   color: rgb(0, 0, 0);
+
+}
+
+#fourth_page{
+    height: 100vh;
+    width: 100vw;
+    background-image:url(images/andrew-schultz-EAlbsTo6nuQ-unsplash.jpg);
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bookyourdream{
+    position: absolute;
+    display: flex;    
+    margin-top: 120px;
+    font-size: 100px;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-bookyourdream linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:620px ;
+}
+@keyframes fade-in-bookyourdream{
+from{
+    scale: 0.8;
+    opacity: 0;
+    margin-left: -30px;
+}
+to{
+    scale:1;
+    opacity: 1;
+    margin-left: 30px;
+}
+}
+#tourwithus{
+    position: absolute;
+    display: flex;    
+    margin-top:210px;
+    font-size: 100px;
+    margin-left: 35px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-tourwithus linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:520px ;
+}
+@keyframes fade-in-tourwithus{
+    from{
+        scale: 0.8;
+        opacity: 0;
+        margin-left: -10px;
+    }
+    to{
+        scale:1;
+        opacity: 1;
+    }
+}
+#booktour-text
+{
+    position: absolute;
+    display: flex;    
+    margin-top:370px;
+    font-size:18px ;
+    width: 600px;
+    font-family: poppins;
+    color: white;
+    font-weight: 200; 
+    margin-left: 35px;
+}
+#GetStartedBooking{
+    height: 40px;
+    width: 150px;
+    border-radius: 12px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    z-index: 99;
+    position: absolute;
+    margin-top: 485px;
+    margin-left: 35px;
+    font-size: 17px;
+    font-weight: 300;
+    overflow: hidden;
+    border: 0.5px solid rgb(255, 255, 255);
+    color: white;
+    font-family: poppins;
+    
+}
+#GetStarted {
+    width: 110%;
+    background-color:rgb(239, 239, 239);
+    position: absolute;
+    top: 0;
+    left: -110%;
+    height: 110%;
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+#GetStartedBooking:hover #GetStarted{
+    left: 0;
+}
+#GetStartedBooking:hover {
+   color: rgb(0, 0, 0);
+  
+}
+
+.laptopVideo1{
+height: 500px;
+width: 200px;
+margin-top: 70px;
+margin-left: 1000px;
+
+
+}
+.laptopVideo2{
+height: 500px;
+width: 250px;
+padding-top: 150px;
+margin-left: -50px;
+
+
+
+}
+#fifth_page{
+    height: 100vh;
+    width: 100vw;
+    background-image:url(images/fifthbackground.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sixth_page{
+    height: 100vh;
+    width: 100vw;
+    background-image:url(images/sixthBackground.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#contactbackground{
+    height:100vh;    
+    background-image: linear-gradient(to top left, #0b0b0bc8 10%,#00000073 90%);
+    width: 100vw;
+    z-index: 1;  
+}
+.contactForm{
+  padding-top: 240px;
+}
+#contactForm{
+    width: 700px;
+    
+}
+
+#firstName::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 15px;
+}
+#lastName::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 15px;
+}
+#emailId::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 15px;
+}
+#mobileNumber::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 15px;
+}
+#messageBox::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 15px;
+}
+#firstName{
+    background-color: #ffffff00;
+    border-top: 0px solid gray;
+    border-right: 0px solid gray;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 0px solid gray;
+    outline: none;
+    border-radius: 0px;
+}
+#lastName{
+    background-color: #ffffff00;
+    border-top: 0px solid gray;
+    border-right: 0px solid gray;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 0px solid gray;
+    outline: none;
+    border-radius: 0px;
+    margin-left: 80px;
+}
+#mobileNumber{
+    background-color: #ffffff00;
+    border-top: 0px solid gray;
+    border-right: 0px solid gray;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 0px solid gray;
+    outline: none;
+    border-radius: 0px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+#emailId{
+    background-color: #ffffff00;
+    border-top: 0px solid gray;
+    border-right: 0px solid gray;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 0px solid gray;
+    outline: none;
+    border-radius: 0px;
+
+}
+#messageBox{
+    margin-top: 100px;
+    width: 580px;
+    background-color: #ffffff00;
+    border-top: 0px solid gray;
+    border-right: 0px solid gray;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-left: 0px solid rgb(255, 255, 255);
+    outline: none;
+    border-radius: 0px;
+}
+
+#reachus{
+    position: absolute;
+    display: flex;    
+    margin-top: 120px;
+    font-size: 100px;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+    animation: fade-in-reachus linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end:620px ;
+}
+@keyframes fade-in-reachus{
+    from{
+        scale: 0.8;
+        opacity: 0;
+  
+    }
+    to{
+        scale:1;
+        opacity: 1;
+
+    }
+    }
+
+/* -------------BOOKING PAGE CSS --------------------------------------------------------*/
+
+#bookingPage{
+    background-image: url(images/zac-ong-JHN1-mpgXjo-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#bookingbackground{
+    /* height:500%;     */
+    background-image: linear-gradient(to top left, #0b0b0b59 10%,#00000056 90%);
+    background-attachment: fixed;
+    width: 100vw;
+    z-index: 1;  
+}
+
+.bookyourdream{
+    display: flex;    
+   
+    font-size: 100px;
+    margin-left: 320px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+
+}
+
+.tourwithus{
+    display: flex;    
+    margin-top: -140px;
+    font-size: 100px;
+    margin-left: 435px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: -5px;
+    text-shadow: 2px 4px #657d63;
+}
+
+.budgettool{
+   
+    display: grid;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding-top: 270px;
+    justify-content: center;
+    
+}
+form{
+ 
+    padding:30px 50px 50px;
+    background-color: #00000078;
+    border-radius: 20px;
+    border: 1px solid gray;
+    backdrop-filter: blur(2px);
+    width: fit-content;
+    margin-left: 400px;
+}
+
+input{
+    margin-top: 20px;
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+}
+select{
+    font-family: poppins;
+    width: 250px;
+    height: 25px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+}
+select:nth-child(2) {
+  width:50px ;
+  }
+  #num{
+    margin-left: 70px;
+  }
+#room{
+    margin-left: 125px;
+
+}
+#dropdown{
+    display:flex ;
+}
+#destinationText{
+    margin-top: -65px;
+    margin-left: 385px;
+    color: white;
+    font-family: poppins;
+}
+#pickupText{
+    color: white;
+    font-family: poppins;
+}
+.destinationDropdown{
+    margin-left: 385px;
+
+}
+::placeholder{
+    font-family: poppins;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000c4;
+}
+#submit{
+    margin-left: 260px;
+    height: 35px;
+    width: 120px;
+    background-color:#0698f3;
+    color: white;
+    font-family: poppins;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#submit:hover{
+    background-color:#045e96;
+}
+
+#output1{
+     
+    padding:30px 50px 50px;
+    background-color: #00000078;
+    border-radius: 20px;
+    border: 1px solid gray;
+    backdrop-filter: blur(2px);
+    width: 640px;
+    margin-top: 50px;
+    margin-left: 400px;
+   color: white;
+   font-family: poppins;
+}
+#trainText{
+    margin-left: 150px;
+    padding-bottom: 20px;
+}
+.buttonRedirect{
+    background-color: #045e96;
+   
+    outline: none;
+    border: none;
+    height: 25px;
+    justify-self: center;
+    align-items: center;
+    color: white;
+    width: 120px;
+    display: flex;
+    padding:  15px 22px;
+    border-radius: 5px;
+}
+.buttonRedirect:hover{
+    background-color: #02395c;
+    cursor: pointer;
+}
+#output2{
+    padding:30px 50px 50px;
+    background-color: #00000078;
+    border-radius: 20px;
+    border: 1px solid gray;
+    backdrop-filter: blur(2px);
+    width: 640px;
+    margin-top: 50px;
+    margin-left: 400px;
+   color: white;
+   font-family: poppins;
+}
+#flightText{
+    margin-left: 150px;
+    padding-bottom: 20px;
+}
+#output3{
+    padding:30px 50px 50px;
+    background-color: #00000078;
+    border-radius: 20px;
+    border: 1px solid gray;
+    backdrop-filter: blur(2px);
+    width: 640px;
+    margin-top: 50px;
+    margin-left: 400px;
+   color: white;
+   font-family: poppins;
+}
+#otherText{
+    margin-left: 80px;
+    padding-bottom: 20px;
+}
+
+
+
+
+

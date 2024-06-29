@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallChimp Campaign</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        const createCampaign = async () => {
+            const url = 'http://localhost:5500/create-campaign';
+            const data = {
+                name: 'Thrifty Voyage',
+                type: 'bulk',
+                recipients: [
+                    { name: 'Nilanjan Joarder', phone: '+91 9674771591' }
+                ],
+                message: 'This is our cab booking'
+            };
+
+            try {
+                const response = await axios.post(url, data);
+                console.log('Campaign created successfully:', response.data);
+            } catch (error) {
+                console.error('Error creating campaign:', error);
+            }
+        };
+
+        createCampaign();
+    </script>
+</body>
+</html>
